@@ -1,4 +1,5 @@
-public class DettaglioOrdine {
+public class DettaglioOrdine 
+{
     private Prodotto articolo;
     private int quantita;
 

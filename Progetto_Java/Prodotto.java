@@ -14,7 +14,8 @@ public class Prodotto {
     }
 
     public void setPrezzoUnitario(double prezzoUnitario) {
-        if (prezzoUnitario > 0.0) {
+        if (prezzoUnitario > 0.0) 
+            {
             this.prezzoUnitario = prezzoUnitario;
         }
     }
