@@ -1,6 +1,6 @@
 public class Prodotto {
-    private int codice;
-    private String descrizione;
+    private final int codice;
+    private final String descrizione;
     private double prezzoUnitario;
 
     public Prodotto(int codice, String descrizione, double prezzoUnitario) {

@@ -18,10 +18,10 @@ public class DemoOrdini {
         ordini[2] = new DettaglioOrdine(p3, 1);
 
         double totale = 0.0;
-        for (int i = 0; i < ordini.length; i++) {
-            if (ordini[i] != null) {
-                ordini[i].dettagli();
-                double totaleRiga = ordini[i].calcolaTotaleRiga();
+        for (DettaglioOrdine ordine : ordini) {
+            if (ordine != null) {
+                ordine.dettagli();
+                double totaleRiga = ordine.calcolaTotaleRiga();
                 System.out.println("Totale riga: " + totaleRiga);
                 totale += totaleRiga;
             }

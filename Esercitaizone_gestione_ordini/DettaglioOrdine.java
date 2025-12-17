@@ -1,11 +1,11 @@
 public class DettaglioOrdine 
 {
-    private Prodotto articolo;
+    private final Prodotto articolo;
     private int quantita;
 
     public DettaglioOrdine(Prodotto articolo, int quantita) {
         this.articolo = articolo;
-        setQuantita(quantita);
+        this.quantita = (quantita < 1) ? 1 : quantita;
     }
 
     public void setQuantita(int quantita) {
