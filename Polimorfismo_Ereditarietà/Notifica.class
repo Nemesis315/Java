@@ -1,0 +1,7 @@
+class Notifica 
+{
+    void invia() 
+    {
+        System.out.println("Invio di una notifica generica...");
+    }
+}
