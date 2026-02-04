@@ -1,0 +1,8 @@
+class SMS extends Notifica 
+{
+    @Override
+    void invia() 
+    {
+        System.out.println("Invio SMS tramite gateway telefonico.");
+    }
+}

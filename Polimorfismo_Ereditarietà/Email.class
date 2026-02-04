@@ -1,0 +1,8 @@
+class Email extends Notifica 
+{
+    @Override // Sovrascriviamo il comportamento del padre
+    void invia() 
+    {
+        System.out.println("Invio email con protocollo SMTP.");
+    }
+}
