@@ -6,7 +6,8 @@ import java.util.Scanner; // Aggiunta per leggere input da console
 public class Main // Classe principale per eseguire il programma
 {
 	public static void main(String[] args) // Metodo main, punto di ingresso del programma
-    {
+    {   
+        boolean tipoInvalido = false; // Variabile per tenere traccia se è stato inserito un tipo non valido
 		Scanner scanner = new Scanner(System.in); // Creazione di un oggetto Scanner per leggere input da console
 		try // Blocco try per gestire eventuali errori di input
         {
