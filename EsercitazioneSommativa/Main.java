@@ -60,7 +60,8 @@ public class Main // Classe principale per eseguire il programma
 
 			System.out.println("\nRisultati analisi:"); // Stampa dell'intestazione per i risultati dell'analisi
 			for (Componente c : elenco) // Ciclo per analizzare ogni componente e calcolare il rendimento
-            {
+			{
+				if (c == null) continue; // Saltare se il componente è null
 				double rendimento = c.calcolaRendimento(); // Calcolo del rendimento del componente utilizzando il metodo calcolaRendimento()
 				String info = String.format("ID=%s, energiaBase=%.2f, rendimento=%.2f", c.getId(), c.getEnergiaBase(), rendimento); // Formattazione delle informazioni del componente per la stampa
 				if (rendimento > soglia) // Controllo se il rendimento supera la soglia di sicurezza
