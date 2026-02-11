@@ -33,17 +33,24 @@ public class Main // Classe principale per eseguire il programma
 				scanner.nextLine(); // Consumo del newline rimasto dopo nextDouble()
 
 				if (tipo.equals("G"))  // Controllo se il tipo è un generatore
-                {
+				{
 					System.out.print("Efficienza (%) del generatore: "); // Richiesta dell'efficienza del generatore
 					double eff = scanner.nextDouble(); // Lettura dell'efficienza del generatore
 					scanner.nextLine(); // Consumo del newline rimasto dopo nextDouble()
 					elenco[i] = new Generatore(id, energiaBase, eff);   // Creazione di un nuovo oggetto Generatore e assegnazione all'array
-				} else 
+				} else if (tipo.equals("C")) // Controllo se il tipo è un convertitore
                 {
 					System.out.print("Perdita (%) del convertitore: "); // Richiesta della perdita del convertitore
 					double perdita = scanner.nextDouble(); // Lettura della perdita del convertitore
 					scanner.nextLine(); // Consumo del newline rimasto dopo nextDouble()
 					elenco[i] = new Convertitore(id, energiaBase, perdita); // Creazione di un nuovo oggetto Convertitore e assegnazione all'array
+				} 
+                else 
+                {
+					System.out.println("Tipo non valido: componente ignorato."); // Messaggio di errore per tipo non valido e ignoramento del componente
+					elenco[i] = null; // Assegnazione di null all'array per indicare che il componente è stato ignorato
+					tipoInvalido = true; // Variabile per tenere traccia se è stato inserito un tipo non valido
+					continue; // Passaggio al prossimo ciclo senza incrementare i contatori di componenti validi
 				}
 			}
 
