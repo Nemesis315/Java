@@ -2,8 +2,8 @@ package EsercitazioneSommativa; // Aggiunta del package per organizzare le class
 
 public class Componente // Classe base per rappresentare un componente generico
 {
-    private String id; // Identificatore del componente
-    private double energiaBase; // Energia base del componente
+    protected String id; // Identificatore del componente
+    protected double energiaBase; // Energia base del componente
 
     public Componente(String id, double energiaBase) // Costruttore per inizializzare l'id e l'energia base del componente
     {
