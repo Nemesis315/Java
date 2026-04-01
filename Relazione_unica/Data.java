@@ -1,4 +1,4 @@
-package lezioni.oggetti; // Definisce il package a cui appartiene questa classe.
+
 
 // La classe Data serve come esempio per dimostrare i tipi di riferimento
 public class Data { // Definizione della classe Data.

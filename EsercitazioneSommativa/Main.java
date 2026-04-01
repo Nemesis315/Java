@@ -1,5 +1,3 @@
-package EsercitazioneSommativa;  // Aggiunta del package per organizzare le classi
-
 import java.util.InputMismatchException; // Aggiunta per gestire input non validi
 import java.util.Scanner; // Aggiunta per leggere input da console
 

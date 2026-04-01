@@ -1,4 +1,4 @@
-package EsercitazioneSommativa; // Aggiunta del package per organizzare le classi
+
 
 public class Convertitore extends Componente // Classe che rappresenta un convertitore, estende la classe Componente
 {

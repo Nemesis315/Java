@@ -1,4 +1,4 @@
-package NegozioDispositivi;
+
 
 public class Smartphone extends Dispositivo 
 {

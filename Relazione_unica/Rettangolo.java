@@ -1,4 +1,4 @@
-package lezioni.oggetti; // Definisce il package a cui appartiene la classe Rettangolo.
+
 
 // La classe Rettangolo rappresenta un oggetto geometrico
 public class Rettangolo { // Definizione della classe Rettangolo.

@@ -1,4 +1,4 @@
-package lezioni.oggetti; // Definisce il package a cui appartiene la classe Persona.
+
 
 // La classe Persona dimostra l'overloading dei costruttori
 public class Persona { // Definizione della classe Persona.

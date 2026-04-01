@@ -1,4 +1,4 @@
-package lezioni.oggetti; // Definisce il package a cui appartiene la classe.
+
 
 // Importazioni necessarie per gli Esercizi:
 import java.util.Scanner;         // Per l'input da console e file.

@@ -1,4 +1,4 @@
-package EsercitazioneSommativa; // Aggiunta del package per organizzare le classi
+
 
 public class Generatore extends Componente // Classe che rappresenta un generatore, estende la classe Componente
 {

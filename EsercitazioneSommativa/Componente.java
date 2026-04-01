@@ -1,4 +1,4 @@
-package EsercitazioneSommativa; // Aggiunta del package per organizzare le classi
+
 
 public class Componente // Classe base per rappresentare un componente generico
 {

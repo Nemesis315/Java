@@ -1,4 +1,4 @@
-package lezioni.oggetti; // Definisce il package per la classe Impiegato.
+
 
 // La classe Impiegato e usata per l'Array di oggetti e l'I/O su file
 public class Impiegato { // Definizione della classe Impiegato.
