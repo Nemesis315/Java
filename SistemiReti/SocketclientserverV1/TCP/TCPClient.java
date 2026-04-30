@@ -25,13 +25,21 @@ public class TCPClient
             while (true) 
                 {
                 System.out.print("Inserisci un numero: ");
-                int guess = keyboard.nextInt();
-                streamOut.println(guess);
-                String response = streamIn.nextLine();
-                System.out.println("Risposta dal server: " + response);
-                if (response.startsWith("Indovinato")) 
+                try 
                 {
-                    break;
+                    int guess = keyboard.nextInt();
+                    streamOut.println(guess);
+                    String response = streamIn.nextLine();
+                    System.out.println("Risposta dal server: " + response);
+                    if (response.startsWith("Indovinato")) 
+                    {
+                        break;
+                    }
+                }
+                catch (java.util.InputMismatchException e) 
+                {
+                    System.out.println("Input non valido, inserisci un numero intero.");
+                    keyboard.nextLine(); // consuma la linea non valida
                 }
             }
             keyboard.close();

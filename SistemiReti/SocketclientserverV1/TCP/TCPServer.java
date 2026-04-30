@@ -19,7 +19,7 @@ public class TCPServer
             sSocket = new ServerSocket(port);
             while (true)
             {
-                System.out.println("Server in ascolto sulla porta" + port + "\n");
+                System.out.println("Server in ascolto sulla porta " + port + "\n");
                 Socket connection = sSocket.accept();     
                 System.out.println("Connessione stabilita e richiesta ricevuta");
                 handleGame(connection);
@@ -49,26 +49,32 @@ public class TCPServer
             while (streamIn.hasNextLine()) 
                 {
                     String guessStr = streamIn.nextLine();
-                    int guess = Integer.parseInt(guessStr);
-                    attempts++;
-                if (guess < X) {
-                    streamOut.println("più alto");
-                }
-                else
-                {
-                    if (guess > X) 
+                    try 
                     {
-                    streamOut.println("più basso");
+                        int guess = Integer.parseInt(guessStr);
+                        attempts++;
+                        if (guess < X) 
+                        {
+                            streamOut.println("più alto");
+                        }
+                        else
+                        {
+                            if (guess > X) 
+                            {
+                                streamOut.println("più basso");
+                            }
+                            else
+                            {
+                                streamOut.println("Indovinato in " + attempts + " tentativi");
+                                break;
+                            }
+                        }                       
                     }
-                    else
+                    catch (NumberFormatException e) 
                     {
-                        streamOut.println("Indovinato in " + attempts + " tentativi");
-                        break;
+                        streamOut.println("Input non valido, inserisci un numero intero.");
                     }
-                    
-                    
                 }
-            }
             streamIn.close();
             streamOut.close();
             connection.close();
