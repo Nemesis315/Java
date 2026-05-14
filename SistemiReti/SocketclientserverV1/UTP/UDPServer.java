@@ -14,7 +14,10 @@ public class UDPServer
 		byte[] buffer;
 		String messageIn, messageOut;
 		Random rand = new Random();
-		int numeroDaIndovinare = rand.nextInt(100) + 1; // numero tra 1 e 100
+		int N = rand.nextInt(5000) + 1; // N tra 1 e 5000
+		int numeroDaIndovinare = rand.nextInt(N) + 1; // numero tra 1 e N
+		int tentativi = 0;
+		System.out.println("Range generato: [1:" + N + "]");
 		System.out.println("Il numero da indovinare è: " + numeroDaIndovinare); // per debug, in produzione rimuovi
 		System.out.println("Apertura porta in corso");
 		try
@@ -29,15 +32,16 @@ public class UDPServer
 				InetAddress clientAddress = inPacket.getAddress();
 				int clientPort = inPacket.getPort();
 				messageIn = new String(inPacket.getData(),0,inPacket.getLength());
-				System.out.println("SONO IL CLIENT" + clientAddress + ":" + clientPort + "> " + messageIn);
-				try {
-					int tentativo = Integer.parseInt(messageIn.trim());
-					if (tentativo < numeroDaIndovinare) {
-						messageOut = "Troppo basso!";
-					} else if (tentativo > numeroDaIndovinare) {
-						messageOut = "Troppo alto!";
-					} else {
-						messageOut = "Corretto! Hai indovinato il numero.";
+			System.out.println("CLIENT " + clientAddress + ":" + clientPort + "> " + messageIn);
+			try {
+				int tentativo = Integer.parseInt(messageIn.trim());
+				tentativi++;
+				if (tentativo < numeroDaIndovinare) {
+					messageOut = "Più basso!";
+				} else if (tentativo > numeroDaIndovinare) {
+					messageOut = "Più alto!";
+				} else {
+					messageOut = "Indovinato in " + tentativi + " tentativi.";
 					}
 				} catch (NumberFormatException e) {
 					messageOut = "Inserisci un numero valido.";

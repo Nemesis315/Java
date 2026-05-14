@@ -21,7 +21,7 @@ public class UDPClient
 			System.out.println("Indirizzo del server trovato");
 			dSocket = new DatagramSocket();
 			while (true) {
-				System.out.print("Inserisci un numero da 1 a 100 (o 'quit' per uscire): ");
+				System.out.print("Inserisci il tuo tentativo (o 'quit' per uscire): ");
 				String input = scanner.nextLine();
 				if (input.equalsIgnoreCase("quit")) {
 					break;
@@ -33,7 +33,7 @@ public class UDPClient
 				dSocket.receive(inPacket);
 				response = new String(inPacket.getData(),0,inPacket.getLength());
 				System.out.println("Risposta dal server: " + response);
-				if (response.contains("Corretto")) {
+				if (response.contains("Indovinato")) {
 					break;
 				}
 			}
